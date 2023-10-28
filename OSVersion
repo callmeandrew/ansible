@@ -1,0 +1,13 @@
+---
+- name: Gather OS Version
+  hosts: your_linux_inventory_group
+  tasks:
+    - name: Get OS version
+      command: "cat /etc/os-release | grep PRETTY_NAME"
+      register: os_version_output
+      changed_when: false
+      failed_when: false
+
+    - name: Print OS Version
+      debug:
+        var: os_version_output.stdout_lines[0]
