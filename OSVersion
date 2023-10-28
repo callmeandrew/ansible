@@ -1,5 +1,6 @@
 ---
 - name: Gather OS Version
+  hosts: *
   tasks:
     - name: Get OS version
       command: "cat /etc/os-release | grep PRETTY_NAME"
