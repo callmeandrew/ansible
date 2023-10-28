@@ -1,6 +1,6 @@
 ---
 - name: Gather OS Version
-  hosts: your_linux_inventory_group
+  hosts: LinuxServers
   tasks:
     - name: Get OS version
       command: "cat /etc/os-release | grep PRETTY_NAME"
